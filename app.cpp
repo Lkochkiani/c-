@@ -119,41 +119,16 @@
 
 // #include <iostream>
 // using namespace std;
-// int main(int argc, char const *argv[])
-// {
-//     unsigned long num, counter = 0, savenum;
-//     cout << "Enter Positive Number ! : ";
-//     cin >> num;
-//     savenum = num;
-//     while (num != 1)
-//     {
-//         counter++;
-//         if (num % 2 == 0)
-//         {
-//             num = num / 2;
-//         }
-//         else
-//         {
-//             num = (num * 3) + 1;
-//         }
-//         cout << counter << " : " << num << endl;
-//     }
-//     cout << savenum << "-s mimdevrobis sigrdze aris " << counter << endl;
-//     return 0;
-// }
-
-// #include <iostream>
-// using namespace std;
-// int Limit = 1000000;
-
 // int main()
 // {
 //     int maxi = 0, maxlen = 1;
-//     for (int i = 2; i < Limit; i++)
+//     for (int i = 2; i <= 1000000; i++)
 //     {
 //         int len = 1;
-//         for (int n = i; n > 1; ++len)
+//         for (int n = i; n > 1; len++)
+//         {
 //             n = n % 2 ? n * 3 + 1 : n / 2;
+//         }
 //         if (len > maxlen)
 //         {
 //             maxlen = len;
