@@ -1,0 +1,85 @@
+
+
+#include <bits/stdc++.h> 
+using namespace std;
+int gamocnoba(int m, int n, int sec, int g, int t){
+    int iGuess, i=1, f;
+    int iSecret = sec;
+    for(i; i>0; i++)  {
+   
+    iGuess = rand () % n + m;
+    
+    if (iSecret<iGuess){ 
+        cout<<"your number is "<<iGuess<<", The secret number is lower"<<endl;
+        n=iGuess-(m);
+        g=iGuess;
+        t+=i;
+        gamocnoba(m, n, iSecret, g, t);
+    }else if (iSecret>iGuess){ 
+        if(iGuess!=m){
+    cout<<"your number is "<<iGuess<<", The secret number is higher"<<endl;
+        }
+    n=g-iGuess;
+    m=iGuess;
+    t+=i;
+    gamocnoba(m, n, iSecret, g, t);
+    }else if (iSecret==iGuess) {
+      cout<<iGuess<<endl;
+      cout<<"Congratulations!"<<endl;
+      f=t;
+      break;
+    }
+   break;
+   return (f);
+  }
+  
+}
+int main ()
+{
+  int r;
+  double c, f=0;
+  int l;
+  int a[100]={};
+  cout<<"***Ricxvisa gamocnobis Tamashi***"<<endl;
+  
+  cout<<"Ramdeni svla itamashos compiuterebma?"<<endl;
+  cin>>r;
+  srand (time(NULL));
+  
+  for(int j=1; j<=r; j++){
+  /***/
+  int iSecre, iSecret, f; 
+  int m =1, n=100, g=100, l=0, t=1;
+  iSecre = rand() % 100 + 1;
+  if(iSecre==100){
+      iSecret=99;
+  }else{
+      iSecret=iSecre;
+  }
+  cout<<" "<<endl;
+  cout<<"Secret number is **"<<iSecret<<"**"<<endl;
+  f = gamocnoba(m, n, iSecret, g, t);
+  cout<<f<<" cda dasjirda"<<endl;
+  for(l; l<100; l++){
+      if(l==f-1){
+          a[l]+=1;
+      }else{ };
+  };
+  
+  /***/
+  }
+   for(l; l<100; l++){
+      if(l==f-1){
+          a[l]+=1;
+      }else{ };
+  };
+    
+  for(int d=0; d<100; d++){
+      if(a[d]>0){
+        cout<<d+1<<" jeri dasjirda compiuters gamosacnobad "<<a[d]<<" svlashi"<<endl;  
+      }else{};
+
+  }
+ 
+  return 0;
+}
